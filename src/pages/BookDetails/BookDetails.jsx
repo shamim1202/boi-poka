@@ -1,5 +1,9 @@
 import { useLoaderData, useParams } from "react-router";
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import { addBookStore } from "../../utilities/addAndSetToDb";
+
+const MySwal = withReactContent(Swal)
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -21,6 +25,12 @@ const BookDetails = () => {
 
   const handleMarkRead = (id) => {
     addBookStore(id);
+
+    Swal.fire({
+      title: "Good job!",
+      text: "Mark as Read Successfully Done",
+      icon: "success",
+    });
   };
 
   return (
