@@ -1,15 +1,20 @@
+import { Link } from "react-router";
+
 const Navbar = () => {
   const links = (
     <>
-      <li>
-        <a>Home</a>
-      </li>
-      <li>
-        <a>Listed Books</a>
-      </li>
-      <li>
-        <a>Pages to Read</a>
-      </li>
+      <Link to="/">
+        <li>Home</li>
+      </Link> 
+      <Link to="/listed_books">
+        <li>Listed Books</li>
+      </Link>
+      <Link to="/read_list">
+        <li>Read Lists</li>
+      </Link>
+      <Link to="/about">
+        <li>About</li>
+      </Link>
     </>
   );
 
@@ -45,9 +50,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1 md:space-x-5">{links}</ul>
       </div>
 
       <div className="navbar-end">
